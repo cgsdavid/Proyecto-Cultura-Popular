@@ -10,14 +10,16 @@
     --naranja-claro: #FF8826;
     --amarillo: #FFB914;
     --turquesa: #2C9FA3;
+    --negro: #333;
+    --Violeta: #9b59b6;
 }
 
 .wrapperGlobal{
     width: 100%;
-    height: 75vh;
+    height: 70vh;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(1, 1fr) repeat(1, minmax(5%, 1fr));
+    grid-template-rows: repeat(1, 1fr);
     flex-wrap: wrap;
     box-sizing: border-box;
     border: none;
@@ -25,6 +27,7 @@
     font-style: normal;
     text-align: center;
 }
+
 
 .wrapperBotones{
     transform: translateY(2rem);
@@ -41,6 +44,7 @@
     padding: 10px;
     background-color: var(--turquesa);
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    height: 70%;
 }
 
 header {
@@ -52,14 +56,60 @@ header {
     padding-left: 30px;
 }
 
+/*Seccion nav */
+nav {
+    display: flex;  /* Flexbox para alinear los elementos */
+    flex-wrap: wrap; /* los elementos se envuelvan si no caben en una sola línea */
+    justify-content: center; 
+    background-color: var(--negro); 
+    padding: 10px 0; 
+}
+
+nav ul {
+    display: flex; /* Los <li> se alinearán en una fila */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: var(--blanco); 
+    text-decoration: none; 
+    font-size: 16px; 
+    display: block;
+    padding: 5px 10px; /* Espaciado interno para mejorar la accesibilidad */
+}
+
+nav li:hover {
+    background-color: var(--naranja-claro);
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    nav {
+        justify-content: flex-start; /* Alinear los elementos al principio del contenedor */
+    }
+
+    nav li {
+        margin: 5px; /* Reducir el margen entre los elementos */
+    }
+}
+
 .wrapperCalendar{
     grid-column: 1/7;
     grid-row: 1;
     width: 70%;
-    height: 100%;
+    height: 70%;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(8, minmax(10%, 1fr));    
+    grid-template-rows: repeat(8, minmax(10%, 0.7fr));    
     border: none;
     max-width: 100%;
     background-color: var(--turquesa);
@@ -68,7 +118,7 @@ header {
     margin: 20px;
     padding: 10px;
     box-sizing: border-box;
-    
+     
 
 }
 
@@ -83,17 +133,52 @@ header {
     display: grid;
 }
 
-p {
-    margin: 0;
-    padding: 0;
-}
+
 
 .gridDias {
     display: grid;
+    max-width: 100%;
     grid-row: 2;
     grid-column: 1/8;
-    width: 100%;
+    box-sizing: border-box;
+    
+    
 }
+
+ /* Media Query para pantallas más pequeñas */
+ @media (max-width: 800px) {
+    .grid-11, .grid-12, .grid-13, .grid-14, .grid-15, .grid-16, .grid-17 {
+      font-size: 0.7rem;
+      
+    }
+
+    
+    
+    .gridDias {
+      grid-template-columns: repeat(7, minmax(10%, 0.7fr));
+    }
+  
+    /* Reducir la longitud del texto para días de la semana */
+    .grid-11:nth-child(1)::before { content: "Lun"; }
+    .grid-12:nth-child(2)::before { content: "Mar"; }
+    .grid-13:nth-child(3)::before { content: "Mié"; }
+    .grid-14:nth-child(4)::before { content: "Jue"; }
+    .grid-15:nth-child(5)::before { content: "Vie"; }
+    .grid-16:nth-child(6)::before { content: "Sáb"; }
+    .grid-17:nth-child(7)::before { content: "Dom"; }
+    
+    /* Hacer que el texto original sea invisible */
+    .grid-11, .grid-12, .grid-13, .grid-14, .grid-15, .grid-16, .grid-17 {
+      visibility: hidden;
+    }
+    
+    .grid-11::before, .grid-12::before, .grid-13::before, .grid-14::before, .grid-15::before, .grid-16::before, .grid-17::before {
+      visibility: visible;
+      display: block;
+      margin-top: 10px;
+    }
+  }
+    
 
 .grid-21:hover, .grid-22:hover, .grid-23:hover, .grid-24:hover, .grid-25:hover, .grid-26:hover, .grid-27:hover,  
 .grid-31:hover, .grid-32:hover, .grid-33:hover, .grid-34:hover, .grid-35:hover, .grid-36:hover, .grid-37:hover,
@@ -113,9 +198,6 @@ p {
     border: none;
     height: 1rem;
     
-    
-   
-    
 }
 
 .grid-12{
@@ -123,8 +205,6 @@ p {
     grid-row: 2;
     grid-column:2 ;
     height: 1rem;
-    max-width: 100%;
-    
     
 }
 .grid-13{
@@ -132,8 +212,6 @@ p {
     grid-row: 2;
     grid-column:3 ;
     height: 1rem;
-    max-width: 100%;
-    
     
 }
 .grid-14{
@@ -141,8 +219,6 @@ p {
     grid-row: 2;
     grid-column:4 ;
     height: 1rem;
-    max-width: 100%;
-    
     
 }
 .grid-15{
@@ -150,28 +226,24 @@ p {
     grid-row: 2;
     grid-column:5 ;
     height: 1rem;
-    max-width: 100%;
-    
-    
+        
 }
 .grid-16{
     border: none;
     grid-row: 2;
     grid-column:6 ;
     height: 1rem;
-    max-width: 100%;
-    
     
 }
 .grid-17{
     border: none;
     grid-row: 2;
     grid-column:7 ;
-    height: 1rem;
-    max-width: 100%;
-    
+    height: 100%;
     
 }
+
+
 .grid-21{
     border: none;
     grid-row: 3;
@@ -179,7 +251,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-22{
@@ -189,7 +260,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-23{
@@ -199,7 +269,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-24{
@@ -209,7 +278,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-25{
@@ -219,7 +287,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-26{
@@ -229,7 +296,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-27{
@@ -239,7 +305,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-31{
@@ -249,7 +314,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-32{
@@ -259,7 +323,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-33{
@@ -269,7 +332,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-34{
@@ -279,7 +341,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-35{
@@ -289,7 +350,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-36{
@@ -299,7 +359,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-37{
@@ -309,7 +368,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-41{
@@ -319,7 +377,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-42{
@@ -329,7 +386,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-43{
@@ -339,7 +395,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-44{
@@ -349,7 +404,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
     
 }
@@ -360,7 +414,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-46{    
@@ -370,7 +423,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-47{
@@ -380,7 +432,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-51{
@@ -390,7 +441,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-52{
@@ -400,7 +450,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-53{
@@ -410,7 +459,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-54{
@@ -420,7 +468,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
     
 }
@@ -431,7 +478,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-56{    
@@ -441,7 +487,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-57{
@@ -451,7 +496,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-61{
@@ -461,7 +505,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-62{
@@ -471,7 +514,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-63{
@@ -481,7 +523,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-64{
@@ -491,7 +532,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
     
 }
@@ -502,7 +542,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-66{    
@@ -512,7 +551,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-67{
@@ -522,7 +560,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 
@@ -533,7 +570,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-72{
@@ -543,7 +579,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 .grid-73{
@@ -553,7 +588,6 @@ p {
     height: 30;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     width: 100%;
 }
 /*Grids botones*/
@@ -595,8 +629,8 @@ p {
 }
 
 .botones{
-    width: 10rem;
-    height: 3rem;
+    width: 100%;
+    height: 70%;
     border-radius: 2px;
     border: none;
     text-align: center;
@@ -612,10 +646,6 @@ p {
     cursor: pointer;
 }
 
-.h3-botones{
-    transform: translateX(-100px);
-}
-
 
 
 
@@ -623,7 +653,6 @@ p {
 
 footer {
     background-color: var(--rojo);
-    padding: 1px;
     width: 100%;
     margin-top: auto;
     display: flex;
