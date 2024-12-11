@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Cultura Popular</title>
+    <link rel="stylesheet" href="src/css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Cultura Popular</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#Registro" class="color-change">Registro</a></li>
+            <li><a href="#Articulos" class="color-change">Articulos</a></li>
+            <li><a href="#Eventos" class="color-change">Eventos</a></li>
+            <li><a href="#Registro de eventos" class="color-change">Registro de eventos</a></li>
+            <li><a href="#Información legal" class="color-change">Información legal</a></li>
+            <li><a href="#Calendario" class="color-change">Calendario</a></li>
+        </ul>
+    </nav>
+
+    <div class="wrapperGlobal">
+        
+        <div class="wrapperCalendar">
+            <div class="gridTittleCalendar">
+                <h3>Diciembre</h3>
+            </div>
+            <div class="gridDias">
+                <div class="grid-11"><p>Lunes</p></div>
+                <div class="grid-12"><p>Martes</p></div>
+                <div class="grid-13"><p>Miercoles</p></div>
+                <div class="grid-14"><p>Jueves</p></div>
+                <div class="grid-15"><p>Viernes</p></div>
+                <div class="grid-16"><p>Sabado</p></div>
+                <div class="grid-17"><p>Domingo</p></div>
+            </div>
+            <div class="grid-21"></div>
+            <div class="grid-22"></div>
+            <div class="grid-23"></div>
+            <div class="grid-24"></div>
+            <div class="grid-25"></div>
+            <div class="grid-26"></div>
+            <a href="/articulo/musica/1" class="grid-27" data-category="musica"><div>1</div></a>
+        <a href="/articulo/ocio/2" class="grid-31" data-category="ocio"><div>2</div></a>
+        <a href="/articulo/culturales/3" class="grid-32" data-category="culturales"><div>3</div></a>
+        <a href="/articulo/turismo/4" class="grid-33" data-category="turismo"><div>4</div></a>
+        <a href="/articulo/otros/5" class="grid-34" data-category="otros"><div>5</div></a>
+        <a href="/articulo/musica/6" class="grid-35" data-category="musica"><div>6</div></a>
+        <a href="/articulo/musica/7" class="grid-36" data-category="musica"><div>7</div></a>
+        <a href="/articulo/musica/8" class="grid-37" data-category="musica"><div>8</div></a>
+        <a href="/articulo/musica/9" class="grid-41" data-category="musica"><div>9</div></a>
+        <a href="/articulo/culturales/10" class="grid-42" data-category="culturales"><div>10</div></a>
+        <a href="/articulo/culturales/11" class="grid-43" data-category="culturales"><div>11</div></a>
+        <a href="/articulo/culturales/12" class="grid-44" data-category="culturales"><div>12</div></a>
+        <a href="/articulo/culturales/13" class="grid-45" data-category="culturales"><div>13</div></a>
+        <a href="/articulo/culturales/14" class="grid-46" data-category="culturales"><div>14</div></a>
+        <a href="/articulo/otros/15" class="grid-47" data-category="otros"><div>15</div></a>
+        <a href="/articulo/musica/16" class="grid-51" data-category="musica"><div>16</div></a>
+        <a href="/articulo/otros/17" class="grid-52" data-category="otros"><div>17</div></a>
+        <a href="/articulo/otros/18" class="grid-53" data-category="otros"><div>18</div></a>
+        <a href="/articulo/culturales/19" class="grid-54" data-category="culturales"><div>19</div></a>
+        <a href="/articulo/ocio/20" class="grid-55" data-category="ocio"><div>20</div></a>
+        <a href="/articulo/ocio/21" class="grid-56" data-category="ocio"><div>21</div></a>
+        <a href="/articulo/musica/22" class="grid-57" data-category="musica"><div>22</div></a>
+        <a href="/articulo/ocio/23" class="grid-61" data-category="ocio"><div>23</div></a>
+        <a href="/articulo/musica/24" class="grid-62" data-category="musica"><div>24</div></a>
+        <a href="/articulo/culturales/25" class="grid-63" data-category="culturales"><div>25</div></a>
+        <a href="/articulo/turismo/26" class="grid-64" data-category="turismo"><div>26</div></a>
+        <a href="/articulo/turismo/27" class="grid-65" data-category="turismo"><div>27</div></a>
+        <a href="/articulo/otros/28" class="grid-66" data-category="otros"><div>28</div></a>
+        <a href="/articulo/turismo/29" class="grid-67" data-category="turismo"><div>29</div></a>
+        <a href="/articulo/culturales/30" class="grid-71" data-category="culturales"><div>30</div></a>
+        <a href="/articulo/musica/31" class="grid-72" data-category="musica"><div>31</div></a>
+
+
+        </div>
+        <div class="wrapperBotones">
+            <div class="tituloBotones">
+                <h3 class="h3-botones">Opciones</h3>
+            </div>
+            <div class="botonFila1"><button class="botones" onclick="filtrar('musica')">Música</button></div>
+            <div class="botonFila2"><button class="botones" onclick="filtrar('ocio')">Ocio</button></div>
+            <div class="botonFila3"><button class="botones" onclick="filtrar('culturales')">Culturales</button></div>
+            <div class="botonFila4"><button class="botones" onclick="filtrar('turismo')">Turismo</button></div>
+            <div class="botonFila5"><button class="botones" onclick="filtrar('otros')">Otros</button></div>
+        </div>
+        </div>
+        
+    </div>
+    <footer>
+        <ul>
+            <li id="Telefono">Telefono: 777 - 777 7777</li>
+            <li><a href="#Twitter">Twitter: #Cultura_Popular_Pereira</a></li>
+            <li><a href="#Instagram">Instagram: Cultura_Popular_Pereira</a></li>
+        </ul>
+        <div class="divDerecho">
+        <p class="derecha"><a href="#contact">CulturayArte@popular.co</a></p>
+        <p>© 2024. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="src/scripts/script.js"></script>
+</body>
+</html>
