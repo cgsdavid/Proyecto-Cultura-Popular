@@ -19,7 +19,7 @@ elementos.forEach(elemento => {
 
     elemento.addEventListener('mouseleave', function() {
         // Restaurar el color original cuando el ratón salga
-        elemento.style.backgroundColor = '#333'; // O cualquier color que desees
+        elemento.style.backgroundColor = '#333';
     });
 });
 
